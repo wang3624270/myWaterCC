@@ -1,9 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Homepage from '@/components/homepage';
-import Framepage from '@/components/framepage';
+import Helloworld from '@/components/helloworld';
+import WaterAllData from '@/components/dataShow/waterAllData';
+import WaterMonth from '@/components/dataShow/waterMonth';
+import WaterTarget from '@/components/dataShow/waterTarget';
+import DataAcquisition from '@/components/dataCollection/dataAcquisition';
+import DataList from '@/components/dataCollection/dataList';
+import SurfaceWater from '@/components/evaluationAnalysis/surfaceWater';
+import TasteIndex from '@/components/evaluationAnalysis/tasteIndex';
 
-Vue.use(Router)
+Vue.use(Router);
+const Framepage = resolve => require(['@/components/framepage'], resolve);
 
 export default new Router({
     mode: 'history',
@@ -15,9 +23,53 @@ export default new Router({
         },
         {
             path: '/index',
-            name: 'framepage',
-            component: Framepage
+            component: Framepage,
+            children: [
+                {
+                    path: '',
+                    name: 'helloworld',
+                    component: Helloworld
+                },
+                {
+                    path: '/index/waterAllData',
+                    name: 'waterAllData',
+                    component: WaterAllData
+                },
+                {
+                    path: '/index/waterMonth',
+                    name: 'waterMonth',
+                    component: WaterMonth
+                },
+                {
+                    path: '/index/waterTarget',
+                    name: 'waterTarget',
+                    component: WaterTarget
+                },
+                {
+                    path: '/index/dataAcquisition',
+                    name: 'dataAcquisition',
+                    component: DataAcquisition
+                },
+                {
+                    path: '/index/dataList',
+                    name: 'dataList',
+                    component: DataList
+                },
+                {
+                    path: '/index/surfaceWater',
+                    name: 'surfaceWater',
+                    component: SurfaceWater
+                },
+                {
+                    path: '/index/tasteIndex',
+                    name: 'tasteIndex',
+                    component: TasteIndex
+                }
+            ]
         },
-
+        {
+            path:'*',
+            redirect:'/index'
+        }
     ]
 })
