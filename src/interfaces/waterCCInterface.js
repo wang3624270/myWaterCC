@@ -58,6 +58,10 @@ export default {
         let url = `http://${host}/DataShow/waterTarget/getdata`;
         return get(url, data);
     },
+    getHealthRiskList(data = {}) {
+        let url = `http://${host}/WQI/WHIEval`;
+        return get(url, data);
+    },
 
 
 

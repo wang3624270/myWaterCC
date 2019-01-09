@@ -9,6 +9,8 @@ import DataAcquisition from '@/components/dataCollection/dataAcquisition';
 import DataList from '@/components/dataCollection/dataList';
 import SurfaceWater from '@/components/evaluationAnalysis/surfaceWater';
 import TasteIndex from '@/components/evaluationAnalysis/tasteIndex';
+import HealthRisk from '@/components/overallEvaluation/healthRisk';
+import RealDisplay from '@/components/realTimeData/realDisplay';
 
 Vue.use(Router);
 const Framepage = resolve => require(['@/components/framepage'], resolve);
@@ -64,6 +66,16 @@ export default new Router({
                     path: '/index/tasteIndex',
                     name: 'tasteIndex',
                     component: TasteIndex
+                },
+                {
+                    path: '/index/healthRisk',
+                    name: 'healthRisk',
+                    component: HealthRisk
+                },
+                {
+                    path: '/index/realDisplay',
+                    name: 'realDisplay',
+                    component: RealDisplay
                 }
             ]
         },

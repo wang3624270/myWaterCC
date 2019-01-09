@@ -1,4 +1,4 @@
-const waterCC_api_host= '211.87.227.78:8082';
+const waterCC_api_host= '211.87.227.78:8081';
 
 
 export default{

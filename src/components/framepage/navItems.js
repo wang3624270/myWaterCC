@@ -33,19 +33,15 @@ export default [
         children:[
             {label:'单因子评价法',path:''},
             {label:'主成分分析法',path:''},
-            {label:'模糊模式识别法',path:''}
-        ]
-    },
-    {
-        label:'BP神经网络评价法',
-        children:[
-            {label:'BP人工神经网络评价法',path:''}
+            {label:'模糊模式识别法',path:''},
+            {label:'BP神经网络评价法',path:''},
+            {label:'健康风险综合指',path:'/index/healthRisk'}
         ]
     },
     {
         label:'实时数据分析',
         children:[
-            {label:'实时数据展示',path:''},
+            {label:'实时数据展示',path:'/index/realDisplay'},
             {label:'实时数据预警预判',path:''}
         ]
     }
