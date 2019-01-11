@@ -94,7 +94,7 @@
                 });
                 let option = {
                     title : {
-                        text: '271的检测值变化趋势',
+                        text: '271(余氯)的检测值变化趋势',
                         x:'center'
                     },
                     grid:{

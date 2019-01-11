@@ -27,7 +27,8 @@ export default {
             "wsupplyunit": "臭氧活性炭滤灌出水",
             "targetcode": "208",
             "id": 1,
-            "wqitype": "进厂水","TestIndex":"口感较差！（0.42）"},
+            "wqitype": "进厂水",
+            "TestIndex":"口感较差！（0.42）"},
         {
 
             "samtime": "2016-05-24T16:00:00.000Z",
@@ -102,7 +103,7 @@ export default {
             "targetname": "锌",
             "samvaluedefind": "0.05",
             "resultclass":"1",
-            "oneclass":"1",
+            "oneclass":"0",
             "twoclass":"0",
             "threeclass":"0",
             "fourclass":"0",
@@ -119,7 +120,7 @@ export default {
             "targetname": "锌",
             "samvaluedefind": "0.1",
             "resultclass":"1",
-            "oneclass":"1",
+            "oneclass":"0",
             "twoclass":"0",
             "threeclass":"0",
             "fourclass":"0",

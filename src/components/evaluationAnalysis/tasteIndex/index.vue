@@ -33,7 +33,7 @@
                         <el-input  placeholder="请输入采样编号"></el-input>
                     </el-form-item>
                     <el-form-item>
-                        <el-button type="primary" @click="search" size="middle" icon="el-icon-search" :loading="loading3">计算</el-button>
+                        <el-button type="primary" @click="search2" size="middle" icon="el-icon-search" :loading="loading3">计算</el-button>
                     </el-form-item>
                 </el-form>
             </el-header>
@@ -50,6 +50,7 @@
                     <el-table-column prop="targetcode" label="指标编号"></el-table-column>
                     <el-table-column prop="targetname" label="指标名称"></el-table-column>
                     <el-table-column prop="samvaluedefind" label="检测值"></el-table-column>
+                    <el-table-column prop="TestIndex" label="口感指数"></el-table-column>
                 </el-table>
                 <portal-pagination v-show="!loading3"
                                    :page-size="pageSize2"
