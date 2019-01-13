@@ -31,7 +31,7 @@ export default [
     {
         label:'综合水质评价',
         children:[
-            {label:'单因子评价法',path:''},
+            {label:'单因子评价法',path:'/index/singleFactor'},
             {label:'主成分分析法',path:'/index/principalAnalysis'},
             {label:'模糊模式识别法',path:''},
             {label:'BP神经网络评价法',path:''},

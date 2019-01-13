@@ -2,7 +2,7 @@
     <div>
         <el-container>
             <el-main>
-                <el-alert title="口感数据总览" type="success" :closable="false"></el-alert>
+                <el-alert title="口感数据总览" type="success" :closable="false" center></el-alert>
                 <el-table :data="list1" border style="width: 100%" size="middle" v-loading="loading1">
                     <el-table-column prop="id" label="序号"></el-table-column>
                     <el-table-column prop="samcode" label="采样编号"></el-table-column>
@@ -37,7 +37,7 @@
                     </el-form-item>
                 </el-form>
             </el-header>
-            <el-alert title="口感指数计算" type="success" :closable="false"></el-alert>
+            <el-alert title="口感指数计算" type="success" :closable="false" center></el-alert>
             <el-main>
                 <el-table :data="list2" border style="width: 100%" size="middle" v-loading="loading3">
                     <el-table-column prop="id" label="序号"></el-table-column>

@@ -13,6 +13,7 @@ import HealthRisk from '@/components/overallEvaluation/healthRisk';
 import RealDisplay from '@/components/realTimeData/realDisplay';
 import GroundWater from '@/components/dataShow/groundWater';
 import PrincipalAnalysis from '@/components/overallEvaluation/principalAnalysis';
+import SingleFactor from '@/components/evaluationAnalysis/singleFactor';
 
 Vue.use(Router);
 const Framepage = resolve => require(['@/components/framepage'], resolve);
@@ -88,6 +89,11 @@ export default new Router({
                     path: '/index/principalAnalysis',
                     name: 'principalAnalysis',
                     component: PrincipalAnalysis
+                },
+                {
+                    path: '/index/singleFactor',
+                    name: 'singleFactor',
+                    component: SingleFactor
                 }
             ]
         },

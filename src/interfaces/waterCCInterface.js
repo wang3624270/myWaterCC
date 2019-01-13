@@ -99,6 +99,18 @@ export default {
         let url = `http://${host}/WQI/PCAEval`;
         return formPost(url, data);
     },
+    getPCAEval(data = {}) {
+        let url = `http://${host}/WQI/PCAEval`;
+        return formPost(url, data);
+    },
+    getSingleFData(data = {}) {
+        let url = `http://${host}/WQI/singleFData`;
+        return get(url, data);
+    },
+    getSingleFactor(data = {}) {
+        let url = `http://${host}/WQI/singleFactor`;
+        return formPost(url, data);
+    },
 
 
 
