@@ -4,14 +4,13 @@
             <el-header height="auto">
                 <el-form :inline="true" :model="form" class="demo-form-inline" size="middle">
                     <el-form-item label="采样编码">
-                        <el-input v-model="form.samcode" placeholder="请输入采样编码"></el-input>
-                    </el-form-item>
-                    <el-form-item>
-                        <el-button type="primary" @click="search" size="middle" icon="el-icon-search" :loading="loading">等级分析</el-button>
+                        <el-select v-model="form.samcode" placeholder="请选择检测性质">
+                            <el-option v-for="item in samcodes" :label="item.label" :value="item.label" :key="item.label"></el-option>
+                        </el-select>
                     </el-form-item>
                 </el-form>
             </el-header>
-            <el-main>
+            <el-main v-loading="loading">
                 <el-form ref="form" label-width="100px">
                     <el-form-item label="采样信息">
                         <pre>{{this.list[0]}}</pre>
@@ -29,6 +28,7 @@
 </template>
 <script>
     import WaterCCInterface from '@/interfaces/waterCCInterface';
+    import {samcodes} from '@/dictionary/waterCCOptions.js'
 
     export default {
         data() {
@@ -36,8 +36,14 @@
                 form:{
                     samcode:''
                 },
+                samcodes:samcodes,
                 list:[],
                 loading:false
+            }
+        },
+        watch:{
+            'form.samcode'(val){
+                this.search();
             }
         },
         methods:{

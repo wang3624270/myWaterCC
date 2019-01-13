@@ -68,19 +68,18 @@
     import Pagination from '@/widgets/pagination';
     import {checktypes,wqitypes} from '@/dictionary/waterCCOptions.js'
     import { DATETIMERANG_SHORTCUTS } from '@/kit/utils';
-    import commonTool from '@/dictionary/common'
 
     export default {
         data() {
             return {
                 form:{
-                    targetcode:undefined,
-                    checktype:undefined,
-                    wqitype:undefined,
-                    samaddr:undefined,
-                    wsupplyunit:undefined,
-                    starttime:undefined,
-                    endtime:undefined
+                    targetcode:'',
+                    checktype:'',
+                    wqitype:'',
+                    samaddr:'',
+                    wsupplyunit:'',
+                    starttime:'',
+                    endtime:''
                 },
                 dateRange:[],
                 pickerOptions: Object.assign( {},
@@ -112,17 +111,42 @@
         },
         mounted(){
             this.pageCur=1;
-            this.search();
+            this.init();
         },
         methods:{
+            init(){
+                this.loading=true;
+                let params={
+                    dataTable:'waterall'
+                };
+                params.page=this.pageCur;
+                params.size=this.pageSize;
+                WaterCCInterface.getESdata(params).then( (res) => {
+                    this.loading=false;
+                    if (res.code == WaterCCInterface.SUCCESS) {
+                        let data=res.data.body;
+                        this.list=data.list;
+                        this.total=data.total;
+                    } else {
+                        this.$message.error(`${res.msage}😅`);
+                    }
+                });
+            },
             search(){
                 this.loading=true;
-                let delay=commonTool.delayTime();
-                setTimeout(()=>{
+                let params=this.form;
+                params.page=this.pageCur;
+                params.size=this.pageSize;
+                WaterCCInterface.getWaterAllDataList(params).then( (res) => {
                     this.loading=false;
-                    this.list=commonTool.list1;
-                    this.total=336821;
-                }, delay);
+                    if (res.code == WaterCCInterface.SUCCESS) {
+                        let data=res.data.body;
+                        this.list=data.list;
+                        this.total=data.total;
+                    } else {
+                        this.$message.error(`${res.msage}😅`);
+                    }
+                });
             },
             listen(pageSize, pageIndex) {
                 this.pageSize = pageSize;

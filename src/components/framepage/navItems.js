@@ -12,7 +12,7 @@ export default [
             {label:'WaterAll数据',path:'/index/waterAllData'},
             {label:'WaterMonth数据',path:'/index/waterMonth'},
             {label:'WTarget数据',path:'/index/waterTarget'},
-            {label:'地表水标准',path:''}
+            {label:'地表水标准',path:'/index/groundWater'}
         ]
     },
     {
@@ -32,10 +32,10 @@ export default [
         label:'综合水质评价',
         children:[
             {label:'单因子评价法',path:''},
-            {label:'主成分分析法',path:''},
+            {label:'主成分分析法',path:'/index/principalAnalysis'},
             {label:'模糊模式识别法',path:''},
             {label:'BP神经网络评价法',path:''},
-            {label:'健康风险综合指',path:'/index/healthRisk'}
+            {label:'健康风险综合指数',path:'/index/healthRisk'}
         ]
     },
     {

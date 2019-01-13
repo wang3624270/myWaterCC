@@ -43,6 +43,7 @@ function formPost(url, data) {
     });
 }
 
+
 export default {
     SUCCESS: 200,
 
@@ -61,6 +62,42 @@ export default {
     getHealthRiskList(data = {}) {
         let url = `http://${host}/WQI/WHIEval`;
         return get(url, data);
+    },
+    addTarget(data = {}) {
+        let url = `http://${host}/DataShow/waterTarget/addTarget`;
+        return formPost(url, data);
+    },
+    modifyTarget(data = {}) {
+        let url = `http://${host}/DataShow/waterTarget/modifyTarget`;
+        return formPost(url, data);
+    },
+    getESdata(data = {}) {
+        let url = `http://${host}/esTech/getESdata`;
+        return get(url, data);
+    },
+    deleteTarget(data = {}) {
+        let url = `http://${host}/DataShow/waterTarget/deleteTarget`;
+        return formPost(url, data);
+    },
+    getGroundData(data = {}) {
+        let url = `http://${host}/DataShow/groundwater/getdata`;
+        return get(url, data);
+    },
+    addGround(data = {}) {
+        let url = `http://${host}/DataShow/groundwater/addTarget`;
+        return formPost(url, data);
+    },
+    modifyGround(data = {}) {
+        let url = `http://${host}/DataShow/groundwater/modifyTarget`;
+        return formPost(url, data);
+    },
+    deleteGround(data = {}) {
+        let url = `http://${host}/DataShow//groundwater/deleteTarget`;
+        return formPost(url, data);
+    },
+    getPCAEval(data = {}) {
+        let url = `http://${host}/WQI/PCAEval`;
+        return formPost(url, data);
     },
 
 

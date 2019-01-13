@@ -100,20 +100,38 @@
         },
         mounted(){
             this.pageCur=1;
-            this.search();
+            this.init();
         },
         methods:{
+            init(){
+                this.loading=true;
+                let params={
+                    dataTable:'watermonth'
+                };
+                params.page=this.pageCur;
+                params.size=this.pageSize;
+                WaterCCInterface.getESdata(params).then( (res) => {
+                    this.loading=false;
+                    if (res.code == WaterCCInterface.SUCCESS) {
+                        let data=res.data.body;
+                        this.list=data.list;
+                        this.total=data.total;
+                    } else {
+                        this.$message.error(`${res.msage}😅`);
+                    }
+                });
+            },
             search(){
                 this.loading=true;
                 let params=this.form;
-                params.page=this.pageCur-1;
+                params.page=this.pageCur;
                 params.pageSize=this.pageSize;
                 WaterCCInterface.getWaterMonthList(params).then( (res) => {
                     this.loading=false;
                     if (res.code == WaterCCInterface.SUCCESS) {
-                        let data=res.data;
-                        this.list=data.dataList;
-                        this.total=data.totalData;
+                        let data=res.data.body;
+                        this.list=data.list;
+                        this.total=data.total;
                     } else {
                         this.$message.error(`${res.msage}😅`);
                     }

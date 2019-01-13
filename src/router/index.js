@@ -11,6 +11,8 @@ import SurfaceWater from '@/components/evaluationAnalysis/surfaceWater';
 import TasteIndex from '@/components/evaluationAnalysis/tasteIndex';
 import HealthRisk from '@/components/overallEvaluation/healthRisk';
 import RealDisplay from '@/components/realTimeData/realDisplay';
+import GroundWater from '@/components/dataShow/groundWater';
+import PrincipalAnalysis from '@/components/overallEvaluation/principalAnalysis';
 
 Vue.use(Router);
 const Framepage = resolve => require(['@/components/framepage'], resolve);
@@ -76,6 +78,16 @@ export default new Router({
                     path: '/index/realDisplay',
                     name: 'realDisplay',
                     component: RealDisplay
+                },
+                {
+                    path: '/index/groundWater',
+                    name: 'groundWater',
+                    component: GroundWater
+                },
+                {
+                    path: '/index/principalAnalysis',
+                    name: 'principalAnalysis',
+                    component: PrincipalAnalysis
                 }
             ]
         },

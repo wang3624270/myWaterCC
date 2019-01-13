@@ -8,14 +8,23 @@
                 <el-form-item label="指标名称">
                     <el-input v-model="form.targetname" placeholder="请输入指标名称" :disabled="isEdit"></el-input>
                 </el-form-item>
-                <el-form-item label="限值描述">
-                    <el-input v-model="form.limitdesc" placeholder="请输入限值描述"></el-input>
+                <el-form-item label="单位">
+                    <el-input v-model="form.danwei" placeholder="请输入单位"></el-input>
                 </el-form-item>
-                <el-form-item label="限值上限">
-                    <el-input v-model="form.upperlimit" placeholder="请输入限值上限"></el-input>
+                <el-form-item label="第一级">
+                    <el-input v-model="form.oneclass" placeholder="请输入第一级"></el-input>
                 </el-form-item>
-                <el-form-item label="限值下限">
-                    <el-input v-model="form.lowerlimit" placeholder="请输入限值下限"></el-input>
+                <el-form-item label="第二级">
+                    <el-input v-model="form.twoclass" placeholder="请输入第二级"></el-input>
+                </el-form-item>
+                <el-form-item label="第三级">
+                    <el-input v-model="form.threeclass" placeholder="请输入第三级"></el-input>
+                </el-form-item>
+                <el-form-item label="第四级">
+                    <el-input v-model="form.fourclass" placeholder="请输入第四级"></el-input>
+                </el-form-item>
+                <el-form-item label="第五级">
+                    <el-input v-model="form.fiveclass" placeholder="请输入第五级"></el-input>
                 </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
@@ -33,9 +42,12 @@
                 form:{
                     targetcode:'',
                     targetname:'',
-                    limitdesc:'',
-                    upperlimit:'',
-                    lowerlimit:''
+                    danwei:'',
+                    oneclass:'',
+                    twoclass:'',
+                    threeclass:'',
+                    fourclass:'',
+                    fiveclass:''
                 },
                 isEdit:false,
                 title:'',
@@ -64,7 +76,7 @@
                 this.loading=true;
                 let params=this.form;
                 if(this.isEdit==false){
-                    WaterCCInterface.addTarget(params).then( (res) => {
+                    WaterCCInterface.addGround(params).then( (res) => {
                         this.loading=false;
                         if (res.code == WaterCCInterface.SUCCESS) {
                             this.show=false;
@@ -75,7 +87,7 @@
                         }
                     });
                 }else{
-                    WaterCCInterface.modifyTarget(params).then( (res) => {
+                    WaterCCInterface.modifyGround(params).then( (res) => {
                         this.loading=false;
                         if (res.code == WaterCCInterface.SUCCESS) {
                             this.show=false;

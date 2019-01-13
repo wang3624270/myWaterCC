@@ -8,7 +8,7 @@
                     </el-form-item>
                     <el-form-item>
                         <el-button type="primary" @click="search" size="middle" icon="el-icon-search" :loading="loading">查询</el-button>
-                        <el-button type="primary" @click="addIndex" size="middle" icon="el-icon-circle-plus-outline">新增指标</el-button>
+                        <el-button type="primary" @click="addIndex" size="middle" icon="el-icon-circle-plus-outline">新增</el-button>
                     </el-form-item>
                 </el-form>
             </el-header>
@@ -17,9 +17,12 @@
                     <el-table-column prop="id" label="序号"></el-table-column>
                     <el-table-column prop="targetcode" label="指标编码"></el-table-column>
                     <el-table-column prop="targetname" label="指标名称"></el-table-column>
-                    <el-table-column prop="limitdesc" label="限值描述"></el-table-column>
-                    <el-table-column prop="upperlimit" label="限值上限"></el-table-column>
-                    <el-table-column prop="lowerlimit" label="限值下限"></el-table-column>
+                    <el-table-column prop="danwei" label="单位"></el-table-column>
+                    <el-table-column prop="oneclass" label="第一级"></el-table-column>
+                    <el-table-column prop="twoclass" label="第二级"></el-table-column>
+                    <el-table-column prop="threeclass" label="第三级"></el-table-column>
+                    <el-table-column prop="fourclass" label="第四级"></el-table-column>
+                    <el-table-column prop="fiveclass" label="第五级"></el-table-column>
                     <el-table-column label="操作">
                         <template slot-scope="scope">
                             <el-button @click="edit(scope.row)" type="text" size="mini">更新</el-button>
@@ -35,7 +38,7 @@
                 </portal-pagination>
             </el-main>
         </el-container>
-        <portal-index-info ref="indexInfo" @refresh-list="search"></portal-index-info>
+        <portal-ground-info ref="groundInfo" @refresh-list="search"></portal-ground-info>
     </div>
 </template>
 <script>
@@ -43,7 +46,7 @@
     import Pagination from '@/widgets/pagination';
     import {wqitypes} from '@/dictionary/waterCCOptions.js'
     import { DATETIMERANG_SHORTCUTS } from '@/kit/utils';
-    import IndexInfo from './indexInfo.vue';
+    import GroundInfo from './groundInfo.vue';
 
     export default {
         data() {
@@ -61,7 +64,7 @@
         },
         components: {
             'portal-pagination': Pagination,
-            'portal-index-info': IndexInfo
+            'portal-ground-info': GroundInfo
         },
         mounted(){
             this.pageCur=1;
@@ -71,7 +74,7 @@
             init(){
                 this.loading=true;
                 let params={
-                    dataTable:'watertarget'
+                    dataTable:'facewaterstand'
                 };
                 params.page=this.pageCur;
                 params.size=this.pageSize;
@@ -91,7 +94,7 @@
                 let params=this.form;
                 params.page=this.pageCur;
                 params.pageSize=this.pageSize;
-                WaterCCInterface.getWaterTargetList(params).then( (res) => {
+                WaterCCInterface.getGroundData(params).then( (res) => {
                     this.loading=false;
                     if (res.code == WaterCCInterface.SUCCESS) {
                         let data=res.data;
@@ -103,15 +106,15 @@
                 });
             },
             addIndex(){
-                this.$refs.indexInfo.title='新增';
-                this.$refs.indexInfo.show=true;
-                this.$refs.indexInfo.isEdit=false;
+                this.$refs.groundInfo.title='新增';
+                this.$refs.groundInfo.show=true;
+                this.$refs.groundInfo.isEdit=false;
             },
             edit(params){
-                this.$refs.indexInfo.form=params;
-                this.$refs.indexInfo.title='更新';
-                this.$refs.indexInfo.isEdit=true;
-                this.$refs.indexInfo.show=true;
+                this.$refs.groundInfo.form=params;
+                this.$refs.groundInfo.title='更新';
+                this.$refs.groundInfo.isEdit=true;
+                this.$refs.groundInfo.show=true;
             },
             deleteIndex(targetcode){
                 this.$confirm('确认删除？', '提示', {
@@ -123,7 +126,7 @@
                     let params={
                         targetcode:targetcode
                     };
-                    WaterCCInterface.deleteTarget(params).then( (res) => {
+                    WaterCCInterface.deleteGround(params).then( (res) => {
                         this.loading=false;
                         if (res.code == WaterCCInterface.SUCCESS) {
                             this.list=[];
