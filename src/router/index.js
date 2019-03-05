@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Homepage from '@/components/homepage';
-import Helloworld from '@/components/helloworld';
 import WaterAllData from '@/components/dataShow/waterAllData';
 import WaterMonth from '@/components/dataShow/waterMonth';
 import WaterTarget from '@/components/dataShow/waterTarget';
@@ -30,11 +29,6 @@ export default new Router({
             path: '/index',
             component: Framepage,
             children: [
-                {
-                    path: '',
-                    name: 'helloworld',
-                    component: Helloworld
-                },
                 {
                     path: '/index/waterAllData',
                     name: 'waterAllData',
