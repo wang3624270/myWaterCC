@@ -34,7 +34,7 @@ export default [
             {label:'单因子评价法',path:'/index/singleFactor'},
             {label:'主成分分析法',path:'/index/principalAnalysis'},
             {label:'模糊模式识别法',path:''},
-            {label:'BP神经网络评价法',path:''},
+            {label:'BP神经网络评价法',path:'/index/bPAnalysis'},
             {label:'健康风险综合指数',path:'/index/healthRisk'}
         ]
     },

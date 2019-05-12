@@ -111,6 +111,10 @@ export default {
         let url = `http://${host}/WQI/singleFactor`;
         return formPost(url, data);
     },
+    getBPNetworkData(data = {}) {
+        let url = `http://${host}/WQI/BPNetwork`;
+        return get(url, data);
+    },
 
 
 

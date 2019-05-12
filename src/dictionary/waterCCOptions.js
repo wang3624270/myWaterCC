@@ -53,6 +53,7 @@ export const samcodes=[
     {label:"111737"}
 ];
 export const samaddrs=[
+    {label:'清水池'},
     {label:'二水厂'},
     {label:'出水泵房'},
     {label:'一水厂'},
