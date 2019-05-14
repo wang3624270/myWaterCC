@@ -18,14 +18,14 @@ export default [
     {
         label:'水质评估分析',
         children:[
-            {label:'基本统计分析',path:''},
+            {label:'基本统计分析',path:'/index/baseAnalysis'},
             {label:'地表水单指标等级评价',path:'/index/surfaceWater'},
             {label:'水质指标周期性分析',path:''},
             {label:'水质指标相关性分析',path:''},
             {label:'管网水水质分析',path:''},
             {label:'N1指数',path:''},
             {label:'口感指数',path:'/index/tasteIndex'},
-            {label:'污水可生化性分析',path:''}
+            {label:'污水可生化性分析',path:'/index/sewageAnalysis'}
         ]
     },
     {

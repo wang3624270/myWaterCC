@@ -14,6 +14,8 @@ import GroundWater from '@/components/dataShow/groundWater';
 import PrincipalAnalysis from '@/components/overallEvaluation/principalAnalysis';
 import SingleFactor from '@/components/evaluationAnalysis/singleFactor';
 import BPAnalysis from '@/components/overallEvaluation/bPAnalysis';
+import BaseAnalysis from '@/components/evaluationAnalysis/baseAnalysis';
+import SewageAnalysis from '@/components/evaluationAnalysis/sewageAnalysis';
 
 Vue.use(Router);
 const Framepage = resolve => require(['@/components/framepage'], resolve);
@@ -94,6 +96,16 @@ export default new Router({
                     path: '/index/bPAnalysis',
                     name: 'bPAnalysis',
                     component: BPAnalysis
+                },
+                {
+                    path: '/index/baseAnalysis',
+                    name: 'baseAnalysis',
+                    component: BaseAnalysis
+                },
+                {
+                    path: '/index/sewageAnalysis',
+                    name: 'sewageAnalysis',
+                    component: SewageAnalysis
                 }
             ]
         },

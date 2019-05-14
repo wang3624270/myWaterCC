@@ -19,11 +19,16 @@
                 </el-form>
             </el-header>
             <el-main v-loading="loading">
-                <el-form ref="form" label-width="80px">
-                    <el-form-item label="分析结果">
-                        <pre>{{this.data}}</pre>
-                    </el-form-item>
-                </el-form>
+                <table width="100%" class="am-table am-table-compact am-table-bordered am-table-radius am-table-striped tpl-table-black " id="example-r">
+                    <tbody>
+                    <tr v-for="item in data">
+                        <td v-for="subItem in item">
+                            {{subItem}}
+                        </td>
+                    </tr>
+                    <!-- more data -->
+                    </tbody>
+                </table>
             </el-main>
         </el-container>
     </div>

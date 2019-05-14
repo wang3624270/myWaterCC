@@ -97,11 +97,7 @@ export default {
     },
     getPCAEval(data = {}) {
         let url = `http://${host}/WQI/PCAEval`;
-        return formPost(url, data);
-    },
-    getPCAEval(data = {}) {
-        let url = `http://${host}/WQI/PCAEval`;
-        return formPost(url, data);
+        return get(url, data);
     },
     getSingleFData(data = {}) {
         let url = `http://${host}/WQI/singleFData`;
@@ -113,6 +109,14 @@ export default {
     },
     getBPNetworkData(data = {}) {
         let url = `http://${host}/WQI/BPNetwork`;
+        return get(url, data);
+    },
+    getSingleIndicatorData(data = {}) {
+        let url = `http://${host}/WaterIndex/staticByBase`;
+        return get(url, data);
+    },
+    getwuShuiBiodegradabilityData(data = {}) {
+        let url = `http://${host}/WaterIndex/wuShuiBiodegradability`;
         return get(url, data);
     },
 
