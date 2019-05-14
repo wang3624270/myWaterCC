@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-dialog title="【samadder】的【targetcode】指标检测统计数" :visible.sync="show" width="1000px" append-to-body>
+        <el-dialog :title="title" :visible.sync="show" width="1000px" append-to-body>
             <table v-loading="loading" width="100%" class="am-table am-table-compact am-table-bordered am-table-radius am-table-striped tpl-table-black " id="example-r">
                 <tbody>
                 <tr>
@@ -38,6 +38,10 @@
     export default {
         data() {
             return {
+                form:{
+                    samaddr:'',
+                    targetcode:''
+                },
                 list:[],
                 chartData:[],
                 loading:false,
@@ -61,6 +65,11 @@
                         }
                     });
                 }
+            }
+        },
+        computed:{
+            title:function () {
+                return '【'+this.form.samaddr+'】的【'+this.form.targetcode+'】指标检测统计数';
             }
         },
         methods: {

@@ -4,10 +4,10 @@
             <el-header height="auto">
                 <el-form :inline="true" :model="form" class="demo-form-inline" size="middle">
                     <el-form-item label="指标编码">
-                        <el-input  placeholder="请输入指标编码"></el-input>
+                        <el-input v-model="form.targetcode" placeholder="请输入指标编码"></el-input>
                     </el-form-item>
                     <el-form-item label="采样地点">
-                        <el-input  placeholder="请输入采样地点"></el-input>
+                        <el-input v-model="form.samaddr" placeholder="请输入采样地点"></el-input>
                     </el-form-item>
                     <el-form-item>
                         <el-button type="primary" @click="search" size="middle" icon="el-icon-search" :loading="loading">等级分析</el-button>
@@ -51,7 +51,8 @@
         data() {
             return {
                 form:{
-                    targetcode:''
+                    targetcode:'',
+                    samaddr:''
                 },
                 list:[],
                 loading:false,
