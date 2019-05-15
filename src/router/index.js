@@ -16,6 +16,7 @@ import SingleFactor from '@/components/evaluationAnalysis/singleFactor';
 import BPAnalysis from '@/components/overallEvaluation/bPAnalysis';
 import BaseAnalysis from '@/components/evaluationAnalysis/baseAnalysis';
 import SewageAnalysis from '@/components/evaluationAnalysis/sewageAnalysis';
+import PipeNetWater from '@/components/evaluationAnalysis/pipeNetWater';
 
 Vue.use(Router);
 const Framepage = resolve => require(['@/components/framepage'], resolve);
@@ -106,6 +107,11 @@ export default new Router({
                     path: '/index/sewageAnalysis',
                     name: 'sewageAnalysis',
                     component: SewageAnalysis
+                },
+                {
+                    path: '/index/pipeNetWater',
+                    name: 'pipeNetWater',
+                    component: PipeNetWater
                 }
             ]
         },

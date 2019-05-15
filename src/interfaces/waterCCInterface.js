@@ -119,6 +119,10 @@ export default {
         let url = `http://${host}/WaterIndex/wuShuiBiodegradability`;
         return get(url, data);
     },
+    getModelindexData(data = {}) {
+        let url = `http://${host}/WaterIndex/modelindex`;
+        return get(url, data);
+    },
 
 
 

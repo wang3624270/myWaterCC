@@ -22,7 +22,7 @@ export default [
             {label:'地表水单指标等级评价',path:'/index/surfaceWater'},
             {label:'水质指标周期性分析',path:''},
             {label:'水质指标相关性分析',path:''},
-            {label:'管网水水质分析',path:''},
+            {label:'管网水水质分析',path:'/index/pipeNetWater'},
             {label:'N1指数',path:''},
             {label:'口感指数',path:'/index/tasteIndex'},
             {label:'污水可生化性分析',path:'/index/sewageAnalysis'}

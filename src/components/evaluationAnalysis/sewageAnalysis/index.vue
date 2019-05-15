@@ -74,7 +74,7 @@
                 form:{
                     targetcode:'',
                     checktype:'',
-                    wqitype:'',
+                    wqitype:'污水',
                     samaddr:'',
                     wsupplyunit:'',
                     starttime:'',
