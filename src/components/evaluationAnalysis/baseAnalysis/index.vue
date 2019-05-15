@@ -6,12 +6,12 @@
                     <el-form-item label="指标编码">
                         <el-input v-model="form.targetcode" placeholder="请输入指标编码"></el-input>
                     </el-form-item>
-                    <el-form-item label="检测性质">
+                    <el-form-item label="样品类别">
                         <el-select v-model="form.wqitype" placeholder="请选择检测性质" :clearable="true">
                             <el-option v-for="item in wqitypes" :label="item.label" :value="item.label" :key="item.label"></el-option>
                         </el-select>
                     </el-form-item>
-                    <el-form-item label="样品类别">
+                    <el-form-item label="检测性质">
                         <el-select v-model="form.checktype" placeholder="请选择样品类别" :clearable="true">
                             <el-option v-for="item in checktypes" :label="item.label" :value="item.label" :key="item.label"></el-option>
                         </el-select>
